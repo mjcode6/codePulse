@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\CodePulse.Api\\CodePulse.Api.csproj": {}
+    "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\codePulse.API\\CodePulse.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\CodePulse.Api\\CodePulse.Api.csproj": {
+    "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\codePulse.API\\CodePulse.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\CodePulse.Api\\CodePulse.Api.csproj",
+        "projectUniqueName": "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\codePulse.API\\CodePulse.Api.csproj",
         "projectName": "CodePulse.Api",
-        "projectPath": "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\CodePulse.Api\\CodePulse.Api.csproj",
+        "projectPath": "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\codePulse.API\\CodePulse.Api.csproj",
         "packagesPath": "C:\\Users\\mjsiv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\CodePulse.Api\\obj\\",
+        "outputPath": "C:\\Users\\mjsiv\\Desktop\\codePulse\\API\\codePulse.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mjsiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
