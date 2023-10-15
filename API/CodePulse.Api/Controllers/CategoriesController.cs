@@ -56,6 +56,38 @@ namespace CodePulse.Api.Controllers
 
         }
 
+        // Get all categories/ api/ categories https://localhost:7281/api/Categories
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllCategories()
+        {
+           var categories =  await categoryRepository.GetAllAsync();
+
+            // Map domain model to DTO
+
+            var response = new List<CategoryDto>();
+
+            foreach(var category in categories)
+            {
+                response.Add(new CategoryDto
+                {
+                    Id = category.Id,
+                    Name = category.Name,
+                    UrlHandle = category.UrlHandle
+
+                });
+            }
+
+            return Ok(response);
+        }
+
+
+
+
+
+
+
+
 
     }
 }
