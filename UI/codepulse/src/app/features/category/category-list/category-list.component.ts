@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../services/CategoryService';
 import { Category } from '../models/category.model';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Category } from '../models/category.model';
 })
 export class CategoryListComponent implements OnInit{
 
- categories?: Category[];
+  categories$?: Observable<Category[]>;
 
 
 
@@ -19,11 +20,7 @@ export class CategoryListComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    this.categoryServices.getAllCategories()
-    .subscribe({
-      next: (response) => {
-        this.categories = response;
-      }
-    });
+  this.categories$ = this.categoryServices.getAllCategories();
+   
   }
 }
