@@ -61,13 +61,13 @@ namespace CodePulse.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCategories()
         {
-           var categories =  await categoryRepository.GetAllAsync();
+            var categories = await categoryRepository.GetAllAsync();
 
             // Map domain model to DTO
 
             var response = new List<CategoryDto>();
 
-            foreach(var category in categories)
+            foreach (var category in categories)
             {
                 response.Add(new CategoryDto
                 {
@@ -84,9 +84,31 @@ namespace CodePulse.Api.Controllers
 
 
 
+        // get categoties base on id for edit category{id}
+
+        [HttpGet]
+        [Route("{id:Guid}")]
+
+        public async Task<IActionResult> GetCategoryById([FromRoute]Guid id)
+        {
+          var exisitingCategory =  await categoryRepository.GetById(id);
 
 
+            if(exisitingCategory is null)
+            {
+                return NotFound();
+            }
 
+            var response = new CategoryDto
+            {
+                Id = exisitingCategory.Id,
+                Name = exisitingCategory.Name,
+                UrlHandle = exisitingCategory.UrlHandle
+
+            };
+
+            return Ok(response);
+        }
 
 
     }
