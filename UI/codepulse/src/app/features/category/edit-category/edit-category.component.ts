@@ -53,7 +53,7 @@ category?: Category;
          name: this.category?.name ?? '',
          urlHandle: this.category?.urlHandle ?? ''
      };
-
+    
 
      // pass this object to services
      if(this.id){
@@ -67,6 +67,16 @@ category?: Category;
      
   }
 
+  onDelete(): void {
+    if(this.id){
+      this.categoryService.deleteCategory(this.id)
+      .subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/admin/categories');
+        }
+      });
+    }
+  }
   ngOnDestroy(): void {
     this.paramsSubscription?.unsubscribe();
     this.editCategorySubscription?.unsubscribe();
