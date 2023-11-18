@@ -2,6 +2,7 @@
 using CodePulse.Api.Models.DTO;
 using CodePulse.Api.Repositories.Interface;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 
@@ -57,7 +58,34 @@ namespace CodePulse.Api.Controllers
 
             return Ok();
         }
-      
 
+        // get blog  post api url 
+        [HttpGet]
+        public async Task<IActionResult> getAllBlogPosts()
+        {
+          var blogPosts =   await blogPostRepository.getAllAsync();
+
+            // Convert domain model to dto
+
+            var response = new List<BlogPostDto>();
+
+            foreach (var blogPost in blogPosts)
+            {
+                response.Add(new BlogPostDto
+                {
+                    Id = blogPost.Id,
+                    Author = blogPost.Author,
+                    Title = blogPost.Title,
+                    UrlHandle = blogPost.UrlHandle,
+                    FeaturedImageUrl = blogPost.FeaturedImageUrl,
+                    Content = blogPost.Content,
+                    PublichedDate = blogPost.PublichedDate,
+                    ShortDescription = blogPost.ShortDescription,
+                    IsVisible = blogPost.IsVisible
+                });
+            }
+
+            return Ok(response);
+        }
     }
 }
