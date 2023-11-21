@@ -1,3 +1,5 @@
+import { Category } from "../../category/models/category.model";
+
 export interface BlogPost{
     
 id:string;
@@ -9,5 +11,6 @@ urlHandle: string;
 author: string;
 publishedDate: Date;
 isVisible: boolean;
+categories: Category[];
 
 }
