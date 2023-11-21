@@ -16,7 +16,7 @@ namespace CodePulse.Api.Models.Domain
 
         public bool IsVisible { get; set; }
 
-
+        public ICollection<Category> Categories { get; set; }
 
     }
 }
